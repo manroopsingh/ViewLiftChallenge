@@ -6,7 +6,7 @@ Please use this feed  <http://snagfilms.com/feeds> and use Android and render th
 #### Approach  
 ##### Architecture: 
 MVP  
-#####Libraries used:
+##### Libraries used:
 Retrofit  (Network calls)  
 RxJava  (Asynchronous Communication)  
 Butterknife  (View Binding)  
