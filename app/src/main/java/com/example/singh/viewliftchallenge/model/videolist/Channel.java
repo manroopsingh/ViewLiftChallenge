@@ -1,4 +1,4 @@
-package com.example.singh.viewliftchallenge.model;
+package com.example.singh.viewliftchallenge.model.videolist;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -9,8 +9,8 @@ import java.util.List;
 @Root(strict = false)
 public class Channel {
 
-    @Element(name = "title")
-    String title;
+//    @Element(name = "title")
+//    String title;
 
     @Element(name = "link")
     String link;
@@ -36,16 +36,16 @@ public class Channel {
     @Element
     int itemsPerPage;
 
-    @ElementList(inline = true)
+    @ElementList(name = "item",inline = true)
     List<Item> items;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
 
     public String getLink() {
         return link;

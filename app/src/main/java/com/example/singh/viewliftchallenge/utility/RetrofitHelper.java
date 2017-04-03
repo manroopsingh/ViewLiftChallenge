@@ -1,6 +1,6 @@
 package com.example.singh.viewliftchallenge.utility;
 
-import com.example.singh.viewliftchallenge.model.Rss;
+import com.example.singh.viewliftchallenge.model.videolist.Rss;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -16,7 +16,6 @@ import rx.schedulers.Schedulers;
 public class RetrofitHelper {
 
     private static final String BASE_URL = "http://www.snagfilms.com";
-    private static final String BASE_URL1 = "http://api.ratings.food.gov.uk";
 
     public static Retrofit create() {
         return new Retrofit.Builder()
@@ -28,18 +27,15 @@ public class RetrofitHelper {
 
     public static Observable<Rss> createListObs() {
         Retrofit retrofit = create();
-        GithubService service = retrofit.create(GithubService.class);
-
+        RetroFitService service = retrofit.create(RetroFitService.class);
         return service.getVideos();
     }
 
-    public interface GithubService {
+    public interface RetroFitService {
+
 
         @GET("/feeds")
         rx.Observable<Rss> getVideos();
-
-
-
     }
 
 }
